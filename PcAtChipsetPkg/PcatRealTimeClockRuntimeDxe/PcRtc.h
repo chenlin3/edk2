@@ -146,6 +146,24 @@ PcRtcInit (
   );
 
 /**
+  Sets the current local timezone & daylight information.
+
+  @param  TimeZone              Timezone info.
+  @param  Daylight              Daylight info.
+  @param  Global                For global use inside this module.
+
+  @retval EFI_SUCCESS           The operation completed successfully.
+  @retval EFI_DEVICE_ERROR      The variable could not be set due due to hardware error.
+
+**/
+EFI_STATUS
+PcRtcSetTimeZone (
+  IN INT16                  TimeZone,
+  IN UINT8                  Daylight,
+  IN PC_RTC_MODULE_GLOBALS  *Global
+  );
+
+/**
   Sets the current local time and date information.
 
   @param  Time                  A pointer to the current time.
